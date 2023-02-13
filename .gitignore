@@ -1,0 +1,13 @@
+cache/
+.build/
+chroot.files
+chroot.packages.install
+chroot.packages.live
+chroot/
+binary/
+binary.modified_timestamps
+live-image-amd64.contents
+live-image-amd64.files
+*.iso
+*.iso.zsync
+live-image-amd64.packages

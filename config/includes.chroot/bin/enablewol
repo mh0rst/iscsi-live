@@ -1,0 +1,3 @@
+#!/bin/bash
+for net in `ls -C /sys/class/net`; do ethtool -s $net wol g; done
+exit 0
