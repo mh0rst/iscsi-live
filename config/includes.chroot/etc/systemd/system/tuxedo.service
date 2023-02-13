@@ -1,0 +1,9 @@
+[Unit]
+Description=Enable TUXEDO power savings
+
+[Service]
+Type=oneshot
+ExecStart=/bin/tuxedopowersave
+
+[Install]
+WantedBy=multi-user.target
