@@ -3,6 +3,7 @@ Description=Enable TUXEDO power savings
 
 [Service]
 Type=oneshot
+ExecStartPre=/bin/sleep 10
 ExecStart=/bin/tuxedopowersave
 
 [Install]
