@@ -2,7 +2,7 @@
 
 A bootable live image configuration to serve a disk as an iSCSI target.
 
-The live image is built with [Debian Live](https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html), this repository holds a compatible configuration directory. The configuration is based on Debian bullseye amd64.
+The live image is built with [Debian Live](https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html), this repository holds a compatible configuration directory. The configuration is based on Debian sid amd64.
 
 The image is configured to run headless, just customize to your needs, build, flash to a thumb drive and plug it into any computer. An IP address is obtained through DHCP.
 
@@ -30,6 +30,8 @@ Clone this repository
 Add your SSH key here for root access: `config/includes.chroot/root/.ssh/authorized_keys`
 
 Configure the iSCSI target here (i.e. to change the shared disk): `config/includes.chroot/etc/tgt/conf.d/target.conf`
+
+Setup custom networking here: `config/includes.chroot/etc/network/interfaces`, then adjust the `LB_BOOTAPPEND_LIVE` config option in `config/binary`. If you forget to adjust the `LB_BOOTAPPEND_LIVE` config option, live-boot will generate it's own `/etc/network/interfaces` file and ignores the custom networking - this is the default!
 
 ## Building the image
 
