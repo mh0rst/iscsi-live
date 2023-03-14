@@ -1,0 +1,14 @@
+# Custom network interface settings
+# This file is only used when the LB_BOOTAPPEND_LIVE variable in config/binary contains the ip=frommedia option
+
+auto lo
+iface lo inet loopback
+
+# Configure ethernet port to use DHCP
+allow-hotplug enp45s0
+iface enp45s0 inet dhcp
+
+# Configure static IP for thunderbolt networking
+allow-hotplug thunderbolt0
+iface thunderbolt0 inet static
+  address 192.168.250.2/24
