@@ -1,0 +1,11 @@
+[Unit]
+Description=Enable nvme tcp target
+Requires=network.target
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/enablenvmet
+
+[Install]
+WantedBy=multi-user.target
