@@ -9,6 +9,7 @@ allow-hotplug enp45s0
 iface enp45s0 inet dhcp
 
 # Configure static IP for thunderbolt networking
+# NOTE: You also need to change the IP in ../../bin/enablenvmet file!
 allow-hotplug thunderbolt0
 iface thunderbolt0 inet static
   address 192.168.250.2/24

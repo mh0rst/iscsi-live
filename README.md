@@ -1,6 +1,6 @@
-# iSCSI live
+# NVMe/TCP live
 
-A bootable live image configuration to serve a disk as an iSCSI target.
+A bootable live image configuration to serve a disk as an NVMe/TCP target.
 
 The live image is built with [Debian Live](https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html), this repository holds a compatible configuration directory. The configuration is based on Debian sid amd64.
 
@@ -8,7 +8,7 @@ The image is configured to run headless, just customize to your needs, build, fl
 
 ## Features
 
-* iSCSI tgt server configured to serve `/dev/nvme0n1`
+* NVMe/TCP target configured to serve `/dev/nvme0n1`
 * SSH server to allow root remote access (add your SSH key!)
 * Enables wake on lan on all network devices
 * Disables nvidia/nouveau kernel modules and turns off nvidia card with bbswitch (for laptops with optimus/prime)
@@ -29,7 +29,7 @@ Clone this repository
 
 Add your SSH key here for root access: `config/includes.chroot/root/.ssh/authorized_keys`
 
-Configure the iSCSI target here (i.e. to change the shared disk): `config/includes.chroot/etc/tgt/conf.d/target.conf`
+Configure the NVMe/TCP target here (i.e. to change the shared disk): `config/includes.chroot/bin/enablenvmet`
 
 Setup custom networking here: `config/includes.chroot/etc/network/interfaces`, then adjust the `LB_BOOTAPPEND_LIVE` config option in `config/binary`. If you forget to adjust the `LB_BOOTAPPEND_LIVE` config option, live-boot will generate it's own `/etc/network/interfaces` file and ignores the custom networking - this is the default!
 

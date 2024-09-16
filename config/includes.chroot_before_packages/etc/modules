@@ -1,3 +1,5 @@
 bbswitch
 thunderbolt
 thunderbolt-net
+nvmet
+nvmet-tcp
