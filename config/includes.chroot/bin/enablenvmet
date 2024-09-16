@@ -2,6 +2,7 @@
 
 # NOTE: You also need to change the IP in ../etc/network/interfaces file!
 OWN_IP=192.168.250.2
+INTERFACE=thunderbolt0
 PORT=4420
 
 # Setup NVMe/TCP subsystem
@@ -15,8 +16,8 @@ echo 1 > enable
 
 # Setup NVMe/TCP target port
 
-echo -n "Waiting for thudnerbolt to come up"
-until ip a s dev thunderbolt0; do sleep 1; echo -n "."; done
+echo -n "Waiting for $INTERFACE to come up"
+until ip a s dev $INTERFACE; do sleep 1; echo -n "."; done
 
 mkdir /sys/kernel/config/nvmet/ports/1
 cd /sys/kernel/config/nvmet/ports/1
